@@ -2,7 +2,6 @@
 import { DeviceEventEmitter, NativeModules } from 'react-native';
 import { Buffer } from 'buffer';
 //global.Buffer = Buffer;
-const { RNSppMagReader } = NativeModules;
 
 const RNSppIMagReader = NativeModules.RNSppIMagReader
 
@@ -37,5 +36,5 @@ RNSppIMagReader.write = (data) => {
   return RNSppIMagReader.writeToDevice(data.toString('base64'))
 }
 
-export default RNSppMagReader;
+export default RNSppIMagReader;
 //export default RNSppIMagReader;
