@@ -117,7 +117,9 @@ public class SppBluetoothModule implements SppListener {
             magPan = _handler.getMagPan();
             magExpDate = _handler.getMagExpDate();
             WritableMap params = Arguments.createMap();
-            params.putString("message", magPan + '^' + magName + '^' + magExpDate);
+            params.putString("magPan", magPan);
+            params.putString("magName", magName);
+            params.putString("magExpDate", magExpDate);
             sendEvent(CARD_READ, params);
         }
 
