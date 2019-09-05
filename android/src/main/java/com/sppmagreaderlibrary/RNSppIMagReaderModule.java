@@ -86,6 +86,7 @@ public class RNSppIMagReaderModule extends ReactContextBaseJavaModule implements
         mReactContext.addActivityEventListener(this);
         mReactContext.addLifecycleEventListener(this);
         registerBluetoothStateReceiver();
+        // registerConnectionStateReceiver();
 
         mSppBluetoothModule = new SppBluetoothModule(mReactContext);
         mSppBluetoothModule.creteSppListener(mReactContext.getApplicationContext());
@@ -715,4 +716,29 @@ public class RNSppIMagReaderModule extends ReactContextBaseJavaModule implements
 
         mReactContext.registerReceiver(bluetoothStateReceiver, intentFilter);
     }
+
+  //   private void registerConnectionStateReceiver() {
+  //     IntentFilter intentFilter = new IntentFilter();
+
+  //     intentFilter.addAction(BluetoothAdapter.ACTION_CONNECTION_STATE_CHANGED);
+
+  //     final BroadcastReceiver connectionStateReceiver = new BroadcastReceiver() {
+  //         @Override
+  //         public void onReceive(Context context, Intent intent) {
+  //             final String action = intent.getAction();
+
+  //             if (BluetoothAdapter.ACTION_CONNECTION_STATE_CHANGED.equals(action)) {
+  //                 final int state = intent.getIntExtra(BluetoothAdapter.EXTRA_CONNECTION_STATE, BluetoothAdapter.ERROR);
+  //                 switch (state) {
+  //                     case BluetoothAdapter.STATE_DISCONNECTED:
+  //                         if (D) Log.d(TAG, "Bluetooth disconected");
+  //                         sendEvent(CONN_LOST, null);
+  //                         break;
+  //                 }
+  //             }
+  //         }
+  //     };
+
+  //     mReactContext.registerReceiver(connectionStateReceiver, intentFilter);
+  // }
 }
