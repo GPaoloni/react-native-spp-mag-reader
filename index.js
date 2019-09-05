@@ -10,7 +10,8 @@ const RNSppIMagReader = NativeModules.RNSppIMagReader
  * @param  {Function} handler Event handler
  */
 RNSppIMagReader.on = (eventName, handler) => {
-  DeviceEventEmitter.addListener(eventName, handler)
+  const suscription = DeviceEventEmitter.addListener(eventName, handler)
+  return suscription
 }
 
 /**
