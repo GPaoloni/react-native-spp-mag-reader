@@ -340,7 +340,7 @@ public class RNSppIMagReaderModule extends ReactContextBaseJavaModule implements
                 promise.reject(new Exception("Could not connect to " + id));
             }
         } else {
-            promise.resolve(true);
+            promise.reject(new Exception("Could not connect to " + id));
         }
     }
 
