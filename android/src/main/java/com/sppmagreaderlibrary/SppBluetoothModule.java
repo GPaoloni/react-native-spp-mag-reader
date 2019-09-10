@@ -65,12 +65,14 @@ public class SppBluetoothModule implements SppListener {
         if (_handler.connect(device)) {
             String name = device.getName();
             Log.d(TAG, "Connected to " + name);
-        } else {
-            sendEvent(CONN_FAILED, null);
-            return false;
+            return true;
         }
-
-        return true;
+        // else {
+        //    //sendEvent(CONN_FAILED, null);
+        //    return false;
+        //}
+        
+        return false;
     }
 
     public boolean disconnectSppListener() {
