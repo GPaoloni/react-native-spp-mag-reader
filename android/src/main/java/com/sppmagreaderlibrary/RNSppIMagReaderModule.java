@@ -334,13 +334,13 @@ public class RNSppIMagReaderModule extends ReactContextBaseJavaModule implements
             BluetoothDevice device = mBluetoothAdapter.getRemoteDevice(id);
             if (device != null) {
                 //mBluetoothService.connect(device);
-                mSppBluetoothModule.connectSppListener(device);
-                promise.resolve(true);
+                boolean result = mSppBluetoothModule.connectSppListener(device);
+                promise.resolve(result);
             } else {
                 promise.reject(new Exception("Could not connect to " + id));
             }
         } else {
-            promise.reject(new Exception("Could not connect to " + id));
+            promise.resolve(false);
         }
     }
 
