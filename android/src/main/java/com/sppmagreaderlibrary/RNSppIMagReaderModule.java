@@ -123,10 +123,10 @@ public class RNSppIMagReaderModule extends ReactContextBaseJavaModule implements
         }
     }
 
-    //@Override
-    //public void onNewIntent(Intent intent) {
-    //    if (D) Log.d(TAG, "On new intent");
-    //}
+    @Override
+    public void onNewIntent(Intent intent) {
+        if (D) Log.d(TAG, "On new intent");
+    }
 
 
     @Override
