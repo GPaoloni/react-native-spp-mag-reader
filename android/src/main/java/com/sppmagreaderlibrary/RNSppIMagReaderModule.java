@@ -97,7 +97,7 @@ public class RNSppIMagReaderModule extends ReactContextBaseJavaModule implements
     }
 
     @Override
-    public void onActivityResult(Activity activity, int requestCode, int resultCode, Intent intent) {
+    public void onActivityResult(int requestCode, int resultCode, Intent intent) {
         if (D) Log.d(TAG, "On activity result request: " + requestCode + ", result: " + resultCode);
         if (requestCode == REQUEST_ENABLE_BLUETOOTH) {
             if (resultCode == Activity.RESULT_OK) {
@@ -123,10 +123,10 @@ public class RNSppIMagReaderModule extends ReactContextBaseJavaModule implements
         }
     }
 
-    @Override
-    public void onNewIntent(Intent intent) {
-        if (D) Log.d(TAG, "On new intent");
-    }
+    //@Override
+    //public void onNewIntent(Intent intent) {
+    //    if (D) Log.d(TAG, "On new intent");
+    //}
 
 
     @Override
